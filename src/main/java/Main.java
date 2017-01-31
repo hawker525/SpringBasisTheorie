@@ -1,7 +1,4 @@
-import be.vdab.ClassA;
-import be.vdab.ClassB;
-import be.vdab.HelpdeskMedewerkers;
-import be.vdab.InterfaceB;
+import be.vdab.*;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -10,7 +7,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 class Main {
     public static void main(String[] args) {
         try (ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("container.xml")){
-            System.out.println(context.getBean(ClassA.class).getWebsiteGestart());
-        }
+                context.getBean("teller1", Teller.class).verhoog();
+                context.getBean("teller1", Teller.class).verhoog();
+                Teller teller2 = context.getBean("teller2", Teller.class);
+                teller2.verhoog();
+                context.getBean("teller2", Teller.class).verhoog();
+            }
     }
 }
