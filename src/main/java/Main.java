@@ -1,4 +1,5 @@
 import be.vdab.*;
+import be.vdab.gaming.Spelletje;
 import be.vdab.restclients.RestClientsConfig;
 import be.vdab.services.EuroService;
 import be.vdab.services.ServicesConfig;
@@ -12,8 +13,8 @@ import java.math.BigDecimal;
  */
 class Main {
     public static void main(String[] args) {
-        try (AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ServicesConfig.class, RestClientsConfig.class)){
-            System.out.println(context.getBean(EuroService.class).naarDollar(BigDecimal.valueOf(2)));
+        try (ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("container.xml")){
+            System.out.println(context.getBean(Spelletje.class).getAantalVijanden());
             }
     }
 }
