@@ -32,6 +32,7 @@
             </set>
         </property>
     </bean>
-    <bean id="teller1" class="be.vdab.Teller"/>
-    <bean id="teller2" class="be.vdab.Teller" scope="prototype"/>
+    <import resource="restclients.xml"/>
+    <import resource="services.xml"/>
+
 </beans>

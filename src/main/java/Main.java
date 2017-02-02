@@ -1,5 +1,8 @@
 import be.vdab.*;
+import be.vdab.services.EuroService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import java.math.BigDecimal;
 
 /**
  * Created by Maarten Westelinck on 31/01/2017 for SpringBasisTheorie.
@@ -7,11 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 class Main {
     public static void main(String[] args) {
         try (ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("container.xml")){
-                context.getBean("teller1", Teller.class).verhoog();
-                context.getBean("teller1", Teller.class).verhoog();
-                Teller teller2 = context.getBean("teller2", Teller.class);
-                teller2.verhoog();
-                context.getBean("teller2", Teller.class).verhoog();
+            System.out.println(context.getBean(EuroService.class).naarDollar(BigDecimal.valueOf(2)));
             }
     }
 }
