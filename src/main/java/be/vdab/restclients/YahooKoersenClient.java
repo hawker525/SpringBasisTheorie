@@ -1,5 +1,9 @@
 package be.vdab.restclients;
 
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
 import java.math.BigDecimal;
 import java.net.URL;
 import java.util.Scanner;
@@ -7,9 +11,11 @@ import java.util.Scanner;
 /**
  * Created by Maarten Westelinck on 31/01/2017 for SpringBasisTheorie.
  */
+//@Qualifier("Yahoo")
+//@Component
 public class YahooKoersenClient implements KoersenClient{
     private final URL url;
-    public YahooKoersenClient(URL url) {
+    public YahooKoersenClient(/*@Value("${yahooKoersenURL}")*/ URL url) {
         this.url = url;
     }
     @Override
