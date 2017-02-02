@@ -13,9 +13,9 @@ import java.util.Scanner;
  */
 //@Qualifier("Yahoo")
 //@Component
-public class YahooKoersenClient implements KoersenClient{
+class YahooKoersenClient implements KoersenClient{
     private final URL url;
-    public YahooKoersenClient(/*@Value("${yahooKoersenURL}")*/ URL url) {
+    YahooKoersenClient(/*@Value("${yahooKoersenURL}")*/ URL url) {
         this.url = url;
     }
     @Override

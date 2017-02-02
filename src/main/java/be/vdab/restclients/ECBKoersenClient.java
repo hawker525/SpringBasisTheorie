@@ -13,10 +13,10 @@ import java.util.Scanner;
  */
 //@Qualifier("EC/*B")
 //@Component*/
-public class ECBKoersenClient implements KoersenClient{
+class ECBKoersenClient implements KoersenClient{
     private final URL url;
 
-    public ECBKoersenClient(/*@Value("${ecbKoersenURL}")*/ URL url) {
+    ECBKoersenClient(/*@Value("${ecbKoersenURL}")*/ URL url) {
         this.url = url;
     }
 
